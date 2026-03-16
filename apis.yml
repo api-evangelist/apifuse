@@ -1,0 +1,53 @@
+aid: apifuse
+name: Apifuse
+description: >-
+  Apifuse is a native integration platform that enables SaaS companies to build
+  and embed integrations directly into their products. It provides a white-label
+  integration solution with pre-built connectors, an embeddable UI, and workflow
+  automation tools that help developers add integrations without building from
+  scratch.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Integrations
+  - iPaaS
+  - SaaS
+  - Embedded Integrations
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/apifuse/refs/heads/main/apis.yml
+created: '2026-03-16'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+apis:
+  - aid: apifuse:apifuse-api
+    name: Apifuse API
+    description: >-
+      The Apifuse API enables developers to programmatically manage embedded
+      integrations, connectors, and workflows within their SaaS applications.
+    humanURL: https://apifuse.io/
+    baseURL: https://api.apifuse.io
+    tags:
+      - Integrations
+      - iPaaS
+      - Embedded Integrations
+    properties:
+      - type: Documentation
+        url: https://docs.apifuse.io/
+      - type: Getting Started
+        url: https://docs.apifuse.io/getting-started
+common:
+  - type: Website
+    url: https://apifuse.io/
+  - type: Documentation
+    url: https://docs.apifuse.io/
+  - type: Blog
+    url: https://apifuse.io/blog
+  - type: Sign Up
+    url: https://app.apifuse.io/register
+  - type: Login
+    url: https://app.apifuse.io/login
+  - type: GitHub Organization
+    url: https://github.com/apifuse
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
