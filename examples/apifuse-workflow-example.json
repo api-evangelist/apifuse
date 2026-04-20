@@ -1,0 +1,6 @@
+{
+  "id": "wf-001",
+  "name": "Lead Sync",
+  "status": "active",
+  "triggerType": "webhook"
+}

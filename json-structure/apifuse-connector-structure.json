@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apifuse/refs/heads/main/json-structure/apifuse-connector-structure.json",
+  "description": "A pre-built connector for a specific platform in Apifuse.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the connector.",
+      "example": "conn-salesforce"
+    },
+    "name": {
+      "type": "string",
+      "description": "Display name of the connector.",
+      "example": "Salesforce"
+    },
+    "category": {
+      "type": "string",
+      "description": "Category of the connector.",
+      "example": "CRM"
+    },
+    "authType": {
+      "type": "string",
+      "enum": [
+        "oauth2",
+        "apikey",
+        "basic"
+      ],
+      "description": "Authentication type used by this connector."
+    }
+  },
+  "name": "Connector"
+}

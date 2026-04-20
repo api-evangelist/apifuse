@@ -1,0 +1,7 @@
+{
+  "id": "int-001",
+  "name": "Salesforce",
+  "category": "CRM",
+  "status": "active",
+  "description": "CRM integration for managing leads and contacts."
+}

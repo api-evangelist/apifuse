@@ -1,0 +1,215 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Apifuse API"
+  description: "Apifuse embedded integration platform API for managing integrations, connectors, workflows, and analytics."
+  tags:
+    - Apifuse
+    - Embedded Integrations
+    - Workflow Automation
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      APIFUSE_API_KEY: APIFUSE_API_KEY
+
+capability:
+  consumes:
+    - type: http
+      namespace: apifuse
+      baseUri: https://api.apifuse.io
+      description: "Apifuse REST API for managing embedded integrations and workflows."
+      authentication:
+        type: apikey
+        key: X-API-Key
+        value: "{{APIFUSE_API_KEY}}"
+        placement: header
+      resources:
+        - name: integrations
+          path: /integrations
+          description: "Manage embedded integrations."
+          operations:
+            - name: list-integrations
+              method: GET
+              description: "List all available integrations."
+              inputParameters:
+                - name: category
+                  in: query
+                  type: string
+                  required: false
+                  description: "Filter by category."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: get-integration
+              method: GET
+              description: "Get details for a specific integration."
+              inputParameters:
+                - name: integrationId
+                  in: path
+                  type: string
+                  required: true
+                  description: "Unique identifier of the integration."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: connectors
+          path: /connectors
+          description: "Browse pre-built connectors."
+          operations:
+            - name: list-connectors
+              method: GET
+              description: "List all pre-built connectors."
+              inputParameters:
+                - name: category
+                  in: query
+                  type: string
+                  required: false
+                  description: "Filter by category."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: workflows
+          path: /workflows
+          description: "Manage integration workflows."
+          operations:
+            - name: list-workflows
+              method: GET
+              description: "List all integration workflows."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: create-workflow
+              method: POST
+              description: "Create a new integration workflow."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+              body:
+                type: json
+                data:
+                  name: "{{tools.name}}"
+                  triggerType: "{{tools.triggerType}}"
+        - name: users
+          path: /users
+          description: "Manage integration users."
+          operations:
+            - name: list-users
+              method: GET
+              description: "List users with connected integrations."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: analytics
+          path: /analytics
+          description: "Integration usage analytics."
+          operations:
+            - name: get-analytics
+              method: GET
+              description: "Get integration usage analytics."
+              inputParameters:
+                - name: startDate
+                  in: query
+                  type: string
+                  required: false
+                  description: "Start date (ISO 8601)."
+                - name: endDate
+                  in: query
+                  type: string
+                  required: false
+                  description: "End date (ISO 8601)."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      port: 8100
+      namespace: apifuse-rest
+      resources:
+        - path: /v1/integrations
+          name: integrations
+          description: "List integrations."
+          operations:
+            - method: GET
+              name: list-integrations
+              description: "List all integrations."
+              call: "apifuse.list-integrations"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9100
+      namespace: apifuse-mcp
+      transport: http
+      tools:
+        - name: list-integrations
+          description: "List all available embedded integrations by category."
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "apifuse.list-integrations"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-connectors
+          description: "List all pre-built connectors available in Apifuse."
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "apifuse.list-connectors"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-workflows
+          description: "List all integration workflows configured in the account."
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "apifuse.list-workflows"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-workflow
+          description: "Create a new integration workflow with triggers and steps."
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: false
+          call: "apifuse.create-workflow"
+          with:
+            name: "tools.name"
+            triggerType: "tools.triggerType"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-analytics
+          description: "Get usage analytics for embedded integrations including task counts and active users."
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "apifuse.get-analytics"
+          outputParameters:
+            - type: object
+              mapping: "$."

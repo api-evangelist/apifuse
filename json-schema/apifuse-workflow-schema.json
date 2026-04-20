@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apifuse/refs/heads/main/json-schema/apifuse-workflow-schema.json",
+  "title": "Workflow",
+  "description": "An integration workflow in the Apifuse platform.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the workflow.",
+      "example": "wf-001"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the workflow.",
+      "example": "Lead Sync"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "inactive",
+        "draft"
+      ],
+      "description": "Current status of the workflow."
+    },
+    "triggerType": {
+      "type": "string",
+      "enum": [
+        "polling",
+        "realtime",
+        "scheduled",
+        "webhook"
+      ],
+      "description": "Type of trigger that activates the workflow."
+    }
+  }
+}

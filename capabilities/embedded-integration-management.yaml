@@ -1,0 +1,137 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Apifuse Embedded Integration Management"
+  description: "Unified workflow for managing embedded integrations within SaaS products - browsing connectors, building workflows, monitoring usage analytics, and managing user connections."
+  tags:
+    - Apifuse
+    - Embedded Integrations
+    - Workflow Automation
+    - SaaS
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      APIFUSE_API_KEY: APIFUSE_API_KEY
+
+capability:
+  consumes:
+    - import: apifuse
+      location: ./shared/apifuse.yaml
+
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: apifuse-integration-api
+      description: "Unified REST API for managing Apifuse embedded integrations."
+      resources:
+        - path: /v1/integrations
+          name: integrations
+          description: "Browse and manage integrations."
+          operations:
+            - method: GET
+              name: list-integrations
+              description: "List all integrations."
+              call: "apifuse.list-integrations"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/connectors
+          name: connectors
+          description: "Browse pre-built connectors."
+          operations:
+            - method: GET
+              name: list-connectors
+              description: "List all connectors."
+              call: "apifuse.list-connectors"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/workflows
+          name: workflows
+          description: "Manage workflows."
+          operations:
+            - method: GET
+              name: list-workflows
+              description: "List workflows."
+              call: "apifuse.list-workflows"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: POST
+              name: create-workflow
+              description: "Create a workflow."
+              call: "apifuse.create-workflow"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/analytics
+          name: analytics
+          description: "Integration analytics."
+          operations:
+            - method: GET
+              name: get-analytics
+              description: "Get analytics data."
+              call: "apifuse.get-analytics"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9090
+      namespace: apifuse-integration-mcp
+      transport: http
+      description: "MCP server for AI-assisted embedded integration management."
+      tools:
+        - name: list-integrations
+          description: "Browse all available embedded integrations, optionally filtered by category."
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "apifuse.list-integrations"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-connectors
+          description: "List all pre-built connectors available for embedding into your SaaS product."
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "apifuse.list-connectors"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-workflows
+          description: "List all integration workflows configured in the embedded marketplace."
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "apifuse.list-workflows"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-workflow
+          description: "Create a new automation workflow connecting two or more integrated platforms."
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: false
+          call: "apifuse.create-workflow"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-analytics
+          description: "Retrieve integration usage analytics including total tasks, active integrations, and active users."
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: "apifuse.get-analytics"
+          outputParameters:
+            - type: object
+              mapping: "$."

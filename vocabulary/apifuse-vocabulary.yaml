@@ -1,0 +1,120 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: "Apifuse"
+  description: "Unified taxonomy of Apifuse embedded integration platform covering integrations, connectors, workflows, and analytics."
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - name: Apifuse API
+      namespace: apifuse
+      version: "1.0"
+      baseUrl: https://api.apifuse.io
+      status: active
+
+  resources:
+    - name: integrations
+      apis: [apifuse]
+      actions: [list, get]
+    - name: connectors
+      apis: [apifuse]
+      actions: [list]
+    - name: workflows
+      apis: [apifuse]
+      actions: [list, create]
+    - name: users
+      apis: [apifuse]
+      actions: [list]
+    - name: analytics
+      apis: [apifuse]
+      actions: [get]
+
+  actions:
+    - name: list
+      http_method: GET
+      pattern: read
+    - name: get
+      http_method: GET
+      pattern: read
+    - name: create
+      http_method: POST
+      pattern: write
+
+  schemas:
+    core:
+      - name: Integration
+        description: Embedded integration available in the marketplace.
+      - name: Connector
+        description: Pre-built connector for a specific platform.
+      - name: Workflow
+        description: Automation workflow connecting integrated platforms.
+      - name: Analytics
+        description: Usage analytics for integration tasks and users.
+
+  enums:
+    integration_status: [active, inactive, beta]
+    workflow_trigger: [polling, realtime, scheduled, webhook]
+    auth_type: [oauth2, apikey, basic]
+    workflow_status: [active, inactive, draft]
+
+  authentication:
+    schemes:
+      - name: apiKeyAuth
+        type: apikey
+        header: X-API-Key
+
+capability:
+  workflows:
+    - name: Embedded Integration Management
+      file: capabilities/embedded-integration-management.yaml
+      apis_combined: [Apifuse API]
+      tool_count: 5
+      personas: [SaaS Product Manager, Integration Developer]
+
+  personas:
+    - id: saas-product-manager
+      name: SaaS Product Manager
+      description: Product manager building native integrations into a SaaS product.
+      workflows: [Embedded Integration Management]
+    - id: integration-developer
+      name: Integration Developer
+      description: Developer implementing and automating embedded integration workflows.
+      workflows: [Embedded Integration Management]
+
+  domains:
+    - name: Embedded Integrations
+      description: Managing native integrations within SaaS products.
+      resources: [integrations, connectors, workflows]
+      workflows: [Embedded Integration Management]
+
+  namespaces:
+    - name: apifuse
+      type: consumed
+      baseUri: https://api.apifuse.io
+    - name: apifuse-integration-api
+      type: rest-exposed
+      port: 8080
+    - name: apifuse-integration-mcp
+      type: mcp-exposed
+      port: 9090
+
+  binds:
+    - name: APIFUSE_API_KEY
+      description: API key for Apifuse authentication.
+      workflows: [Embedded Integration Management]
+
+crossReference:
+  - resource: integrations
+    operations: [listIntegrations, getIntegration]
+    workflows: [Embedded Integration Management]
+    personas: [SaaS Product Manager, Integration Developer]
+  - resource: workflows
+    operations: [listWorkflows, createWorkflow]
+    workflows: [Embedded Integration Management]
+    personas: [Integration Developer]
+  - resource: analytics
+    operations: [getAnalytics]
+    workflows: [Embedded Integration Management]
+    personas: [SaaS Product Manager]

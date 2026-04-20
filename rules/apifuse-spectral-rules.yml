@@ -1,0 +1,94 @@
+extends: spectral:oas
+rules:
+  info-title-prefix:
+    description: API title must start with 'Apifuse'.
+    severity: warn
+    given: '$.info'
+    then:
+      field: title
+      function: pattern
+      functionOptions:
+        match: '^Apifuse'
+
+  info-description-required:
+    description: API must have a description.
+    severity: error
+    given: '$.info'
+    then:
+      field: description
+      function: truthy
+
+  servers-https:
+    description: All server URLs must use HTTPS.
+    severity: error
+    given: '$.servers[*]'
+    then:
+      field: url
+      function: pattern
+      functionOptions:
+        match: '^https://'
+
+  operation-summary-prefix:
+    description: Operation summaries must start with 'Apifuse'.
+    severity: warn
+    given: '$.paths[*][get,post,put,patch,delete]'
+    then:
+      field: summary
+      function: pattern
+      functionOptions:
+        match: '^Apifuse'
+
+  operation-id-required:
+    description: Every operation must have an operationId.
+    severity: error
+    given: '$.paths[*][get,post,put,patch,delete]'
+    then:
+      field: operationId
+      function: truthy
+
+  operation-id-camelcase:
+    description: OperationId must use camelCase.
+    severity: warn
+    given: '$.paths[*][get,post,put,patch,delete]'
+    then:
+      field: operationId
+      function: pattern
+      functionOptions:
+        match: '^[a-z][a-zA-Z0-9]*$'
+
+  operation-tags-required:
+    description: Every operation must have at least one tag.
+    severity: warn
+    given: '$.paths[*][get,post,put,patch,delete]'
+    then:
+      field: tags
+      function: truthy
+
+  parameter-description-required:
+    description: All parameters must have a description.
+    severity: warn
+    given: '$.paths[*][get,post,put,patch,delete].parameters[*]'
+    then:
+      field: description
+      function: truthy
+
+  response-success-required:
+    description: Every operation must have a 2xx response.
+    severity: error
+    given: '$.paths[*][get,post,put,patch,delete].responses'
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          anyOf:
+            - required: ['200']
+            - required: ['201']
+            - required: ['204']
+
+  schema-property-type-required:
+    description: Schema properties must have a type defined.
+    severity: warn
+    given: '$.components.schemas[*].properties[*]'
+    then:
+      field: type
+      function: truthy

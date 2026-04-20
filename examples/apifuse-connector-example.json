@@ -1,0 +1,6 @@
+{
+  "id": "conn-salesforce",
+  "name": "Salesforce",
+  "category": "CRM",
+  "authType": "oauth2"
+}

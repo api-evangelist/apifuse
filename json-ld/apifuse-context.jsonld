@@ -1,0 +1,47 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "apifuse": "https://apifuse.io/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Integration": "apifuse:Integration",
+    "Workflow": "apifuse:Workflow",
+    "Connector": "apifuse:Connector",
+    "Analytics": "apifuse:Analytics",
+    "id": {
+      "@id": "dcterms:identifier",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "description": "schema:description",
+    "status": {
+      "@id": "apifuse:status",
+      "@type": "xsd:string"
+    },
+    "category": {
+      "@id": "apifuse:category",
+      "@type": "xsd:string"
+    },
+    "triggerType": {
+      "@id": "apifuse:triggerType",
+      "@type": "xsd:string"
+    },
+    "authType": {
+      "@id": "apifuse:authType",
+      "@type": "xsd:string"
+    },
+    "totalTasks": {
+      "@id": "apifuse:totalTasks",
+      "@type": "xsd:integer"
+    },
+    "activeIntegrations": {
+      "@id": "apifuse:activeIntegrations",
+      "@type": "xsd:integer"
+    },
+    "activeUsers": {
+      "@id": "apifuse:activeUsers",
+      "@type": "xsd:integer"
+    }
+  }
+}
