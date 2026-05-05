@@ -1,0 +1,73 @@
+---
+title: "Improve Retention with Integrations – SaaS Strategies"
+url: "https://apifuse.io/blog/improve-saas-customer-retention-with-integration/"
+date: "Tue, 02 Mar 2021 11:17:19 +0000"
+author: "Mike Clarke"
+feed_url: "https://apifuse.io/blog/feed/"
+---
+<p>Poor customer retention for Software-as-a-Service (SaaS) companies directly impacts the <a href="https://medium.com/swlh/math-of-growth-vs-retention-65a505e8e37b">growth of your business</a>. As a benchmark, you should be striving to acheive 80% gross dollar retention and 100% net revenue retention. As a founder or product manager, your SaaS solution may make money on implementation and set-up fees, but at the end of the day your valuation will be measured by monthly recurring revenue (MRR) or annual recurring revenue (ARR) and growth rate. Having a robust strategy to combat churn and boost customer retention should be more important to your business vs. customer acquisition if you haven&#8217;t yet reached 80% gross dollar retention. Offering native integrations directly inside your SaaS application can be a critical strategy to achieve this critical metric.</p>
+<p><img alt="A-5%-increase-in-customer-retention-can-increase-profits-by-25%-to-95%" class="aligncenter size-full wp-image-490" height="774" src="http://apifuse.io/blog/wp-content/uploads/2021/03/A-5-increase-in-customer-retention-can-increase-profits-by-25-to-95.jpg" width="1480" /></p>
+<p><i>A 5% increase in customer retention can increase profits by 25% to 95% &#8211; </i><a href="https://hbswk.hbs.edu/archive/the-economics-of-e-loyalty"><i>Bain &amp; Company</i></a></p>
+<p>Take a moment to conduct a simple root cause analysis of your user attrition data. For example, you could use Toyota Production System’s straightforward “<a href="https://kanbanize.com/lean-management/improvement/5-whys-analysis-tool">5 Whys Method</a>” to determine why you have customer churn. This method was developed by Sakichi Toyoda, a Japanese inventor and industrialist, and is a technique that has become an integral part of the Lean philosophy. Essentially, you ask “why” five times whenever you encounter a problem. The root cause should become clear right away.</p>
+<p>Ask yourself a question like this,</p>
+<ol>
+<li style="font-weight: 400;">“Why does my SaaS platform lose users?”
+<ol>
+<li style="font-weight: 400;">The user went to a competitor.</li>
+</ol>
+</li>
+<li style="font-weight: 400;">“Why did my user go to my competitor?”
+<ol>
+<li style="font-weight: 400;">Because my customer thought their tool was better.</li>
+</ol>
+</li>
+<li style="font-weight: 400;">“Why did my customer think that the competitor’s tool was better?”
+<ol>
+<li style="font-weight: 400;">Because the competitor has XYZ functionality and I don’t.</li>
+</ol>
+</li>
+<li style="font-weight: 400;">“Why does my customer value those features over staying with the platform they’ve already implemented?
+<ol>
+<li style="font-weight: 400;">Because it will improve efficiency/save money/etc.</li>
+</ol>
+</li>
+<li style="font-weight: 400;">Why does that matter to my customer?
+<ol>
+<li style="font-weight: 400;">Because at the end of the day, my customer just wants to get their job done.</li>
+</ol>
+</li>
+</ol>
+<blockquote><p><i>You can also leverage </i><a href="https://offers.hubspot.com/customer-churn-analysis-template?hubs_post-cta=anchor&amp;hsCtaTracking=7b9c82ba-76c8-400f-84d3-dcc408b7a5a7%7C639c113e-be6f-4694-b7a7-ab6cc9adda86"><i>HubSpot’s Customer Churn Analysis Template</i></a><i> to get started.</i></p></blockquote>
+<p>The crux of the issue is that your users just want to get their jobs done. Your platform’s UI/UX might be amazing, maybe you have a brilliant reputation in the SaaS marketplace, maybe your implementation times are lightning fast. None of this matters if you can’t help your users get their jobs done.</p>
+<h2>Help Users Get their Jobs Done and Prevent Churn</h2>
+<p>One of the best ways to ensure that your customers are able to perform their job duties is to consider their entire ecosystem of applications. Most likely, they aren’t <i>only </i>leveraging your SaaS solution to run their business. It’s likely that they have data storage applications, email providers, marketing software, document sharing services, CRMs, ERPs, maybe a WMS, TMS or a myriad other types of software. Your tool is only one part of a much more complex job function.</p>
+<p>Take a step back and think about how you’d advise your customer if you were their business consultant, not just a single seller of a specific software. You’d look at their job holistically and make recommendations on how they can improve the use of their time as a whole, not just piecemeal a single system at a time.</p>
+<p>Perhaps <a href="https://www.hubspot.com/">HubSpot</a> said it best in their <a href="https://blog.hubspot.com/marketing/ipaas-guide">Ultimate Guide to IPaaS</a> article. “Over time, we’ve learned that things aren’t so linear and consumers rarely use just one software to satisfy all of their needs. Instead, they find a plugin here, some software there, and maybe even a widget until they have a smorgasbord of options that, together, create the perfect solution.”</p>
+<p>When you consider your users’ job functions in their entirety, it becomes clear that enabling your customers to extensively integrate with their other tools and platforms is essential. When all of their different software and tools “talk to one another” the customer’s job is simplified, things work, and they can quite simply ‘get their job done.’</p>
+<h2>Companies Using Integrations to Combat Customer Churn</h2>
+<p><img alt="Companies-Using-Integrations-to-Combat-Customer-Churn" class="aligncenter size-full wp-image-491" height="774" src="http://apifuse.io/blog/wp-content/uploads/2021/03/Companies-Using-Integrations-to-Combat-Customer-Churn.jpg" width="1480" /></p>
+<h4>Castos: Podcast Hosting and Analytics</h4>
+<p><a href="https://castos.com/">Castos</a> is a podcast analytics and hosting company that was founded about three years ago. In September of 2020, Castos’ CEO, <a href="https://twitter.com/thecraighewitt?lang=en">Craig Hewitt</a>, was interviewed by <a href="https://blog.getlatka.com/software-with-a-service-company-castos-hits-2000-podcast-hosting-customers-with-2-5-monthly-churn/">GetLacka</a>, a notable B2B SaaS Blog, about their user retention strategy. Their strategy to prevent customer churn specifically features a connector with WordPress, an application programming interface commonly used for website creation.</p>
+<p>This is Castos’ story.</p>
+<p>The competition in the podcast hosting sphere is growing and squeezing out SaaS providers that don’t deliver exactly what their users need to do their jobs. Castos has carved out a significant chunk of the market, with about 800 new customers every month leveraging its 14-day free trial. Between 150 &#8211; 200 of these free trial users eventually convert to paying customers!</p>
+<p>Castos has now passed over 2,000 subscribers and continues to grow. Hewitt credits the company’s unique retention strategy for giving them the sticky factor they need to keep users on its podcasting platform. This sticky factor are the connectors it has created for users, including a WordPress plugin and automatic republishing of content to YouTube. Not only do these connectors differentiate Castos from competitors like Libsyn and Blubrry, it helps to cement Castos into its users’ entire job function.</p>
+<p>According to Hewitt, “Services are not hard if you get the people and systems in place.” Castos now brings in about $60,000 per month between subscription fees and separate service offerings. <b>Monthly logo churn for their SaaS rests at a very low 1%</b>. Hewitt explains that in most cases, his customers only depart the platform if they’ve stopped podcasting for an entirely unrelated reason.</p>
+<h4>Typeform: Online Forms and Surveys</h4>
+<p><a href="https://www.typeform.com/">Typeform</a> is a Barcelona-based online software as a service company that specializes in online form building and online surveys. Its main software creates dynamic forms based on user needs. Typeform has built out multiple native integrations to help end users do their jobs more efficiently. They’re a prime example of a time when offering extensible integrations to users directly resulted in better customer retention.</p>
+<p>When a user chooses to leverage an integration to connect Typeform with another external system, that user is <a href="https://www.priceintelligently.com/blog/using-saas-integrations-to-reduce-saas-churn">40% less likely to churn</a> compared with a user that doesn’t use any offered application integrations. These connectors increase user productivity and contribute to Typeform’s sticky factor while discourage customer churn.</p>
+<p><img alt="Typeform churn rate APIFuse" class="aligncenter size-full wp-image-493" height="594" src="http://apifuse.io/blog/wp-content/uploads/2021/03/Typeform-churn-rate-APIFuse.png" width="958" /></p>
+<h4>Stibo Systems: Enterprise MDM</h4>
+<p><a href="https://www.stibosystems.com/">Stibo Systems</a>, an MDM platform, has partnered with Mulesoft, an iPasS company, to provide their retail customers with improved integration options to connect disparate systems. On average, Stibo Systems reports that their retail customers are seeing an increase in profitability of 6% as well as <a href="https://blogs.mulesoft.com/api-integration/mdm-customer-experiences-stibo-systems/">an increase in customer retention of 6x!</a></p>
+<p>One of Stibo Systems’ customers is a large financial institution that remains unnamed in their <a href="https://www.mulesoft.com/ty/webinar/mdm-master-data-management">case study</a>. This financial institution is over 100 years old, services 5 million customers, and has conducted numerous acquisitions over the years. As you can imagine, this has created quite the assortment of disparate systems that need to be connected using technology. Otherwise, users are left with additional manual labor or unable to complete the actions they need.</p>
+<p>By leveraging the integrations offered by Stibo Systems via Mulesoft, the financial institution has been able to manage their product and customer data more accurately and break down data silos that were costing them clients. Now, their users can access the data they need from the MDM platforms and do it all within a single system.</p>
+<p>By leveraging integrations from their MDM provider through Mulesoft’s connectors, this financial institution can help its end users get their jobs done more efficiently. Stibo didn’t lose an important client and the financial institution retained theirs as well! It’s a win-win.</p>
+<h3>Gartner’s Magic Quadrant for iPaaS</h3>
+<p>Integration-Platforms-as-a-Service is still a new segment of the industry and continues to evolve rapidly. SaaS companies can leverage the extensible services of an iPasS provider to give their customers better user experiences and a heightened level of efficiency &#8211; all leading to superior customer retention. Since this field is still new, one of the only firms actively researching the impact of these API connectors on SaaS companies is Gartner.</p>
+<p>Gartner is a world-renowned IT consulting firm that is known to be unbiased and thorough in their reporting. For the past few years, Gartner has been releasing a Magic Quadrant report featuring EiPaas/iPaas. In the iPaaS Magic Quadrant, “Gartner analysts evaluate technology providers on the quality and efficacy of the processes, systems, methods or procedures that enable their performance to be competitive, efficient and effective, and to positively affect revenue, retention and reputation.”</p>
+<p><a href="https://www.gartner.com/doc/3990698">Access the report from Gartner</a> to see how they assess 17 vendors in this technology sector.</p>
+<h2><b>Integration Capabilities Keep Customers Coming Back</b></h2>
+<p>Being able to offer your customer extensible integrations directly from within their own SaaS platform will help you keep your customer attrition to a minimum. Providing easy-to-use connectors increases the actual use of your product and keeps activity high while giving your customers more reason to engage with the system every day. Your users can essentially “kill two birds with one stone” by accessing data from another of their tools within a single pane of glass. Instead of them needing to pivot between platforms, they can do it all in one place, increasing productivity and helping them get their jobs done.</p>
+<p>By offering API connections and other application integration options, you also reduce the risk of churn as your customers’ needs change. If your customer’s business is suddenly booming, you need to be able to support that growth. If not, they will click the “Delete Account” button and quickly find an alternative that does help them get their needs met. You want to be there to support your users from a big picture standpoint, not only to grab payments upfront. A long-lasting relationship will be much more beneficial for you in the long run.</p>
+<p>If your product only tries to improve a specific aspect of your user’s life, or only focuses on one part of their job function and workflow, you haven’t set yourself up for success. Instead of focusing on the “sell,” think about your users’ businesses holistically and think about what they need to make their jobs easier. If it’s clear that your users could link different workflows together, it’s likely that building out these connectors will help you reduce your customer churn. Consider <a href="https://www.elastic.io/survival-of-the-stickiest-saas-customer-retention-strategies-for-unprecedented-times/">embedding integrations</a> into your platform to keep your MRR growing.</p>
+<p><a href="https://apifuse.io/">API Fuse</a> enables you to offer on-demand integrations so that you can help your customers get their jobs done. With our solution and <a href="https://www.apifuse.io/pricing">range of plans</a>, you can provide your customers native or custom integrations embedded directly into your SaaS app in minutes to accelerate your product roadmap and reduce technical debt. If you want to reduce your customer churn rate <a href="https://apifuse.io/signup">request a demo today for more information</a>!</p>
+<p>The post <a href="https://apifuse.io/blog/improve-saas-customer-retention-with-integration/" rel="nofollow">Improve Retention with Integrations &#8211; SaaS Strategies</a> appeared first on <a href="https://apifuse.io/blog" rel="nofollow">API Fuse</a>.</p>
