@@ -121,6 +121,11 @@ common:
         description: Up to 5,000,000 tasks/month with unlimited pre-built connectors for established SaaS companies.
       - name: Enterprise Plan
         description: Custom task volume, fully managed integrations, and dedicated support for enterprise SaaS platforms.
+  - type: Integrations
+    url: https://apifuse.io/integrations
+integrations:
+  - name: logo
+  - name: email
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
