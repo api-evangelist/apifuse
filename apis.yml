@@ -54,7 +54,7 @@ apis:
         url: json-schema/apifuse-connector-schema.json
       - type: JSONSchema
         url: json-schema/apifuse-analytics-schema.json
-      - type: JSON-LD
+      - type: JSONLD
         url: json-ld/apifuse-context.jsonld
 common:
   - type: Website
