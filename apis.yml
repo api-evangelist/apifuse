@@ -5,7 +5,7 @@ description: Apifuse is a native integration platform that enables SaaS companie
   embeddable UI, workflow automation, and analytics tools that help developers add native integrations without building from
   scratch.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Embedded Integrations
 - Integration Platform
