@@ -51,15 +51,15 @@ apis:
     url: json-schema/apifuse-analytics-schema.json
   - type: JSONLD
     url: json-ld/apifuse-context.jsonld
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/apifuse-analytics.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/apifuse-connectors.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/apifuse-integrations.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/apifuse-users.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/apifuse-workflows.yaml
 common:
 - type: LinkedIn
@@ -74,7 +74,7 @@ common:
   url: https://apifuse.io/pricing
 - type: Blog
   url: https://apifuse.io/blog
-- type: SignUp
+- type: Signup
   url: https://app.apifuse.io/register
 - type: Login
   url: https://app.apifuse.io/login
