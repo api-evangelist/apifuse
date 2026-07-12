@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/apifuse-api.yaml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: apiKeyAuth
+  type: apiKey
+  in: header
+  parameter: X-API-Key
+  description: API key for authenticating requests to the Apifuse API.
+  sources:
+  - openapi/apifuse-api.yaml

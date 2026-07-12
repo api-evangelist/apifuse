@@ -62,6 +62,10 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/apifuse-workflows.yaml
 common:
+- type: DomainSecurity
+  url: security/apifuse-domain-security.yml
+- type: Authentication
+  url: authentication/apifuse-authentication.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/api-fuse
 - type: Website
