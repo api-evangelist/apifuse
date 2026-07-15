@@ -62,6 +62,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/apifuse-workflows.yaml
 common:
+- type: AgenticAccess
+  url: agentic-access/apifuse-agentic-access.yml
 - type: DomainSecurity
   url: security/apifuse-domain-security.yml
 - type: Authentication
