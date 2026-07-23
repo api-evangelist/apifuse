@@ -1,0 +1,113 @@
+openapi: 3.0.3
+info:
+  title: Apifuse Analytics Connectors API
+  description: The Apifuse API enables developers to programmatically manage embedded integrations, connectors, workflows, and user authentication within their SaaS applications. Build native integration marketplaces and manage the complete embedded integration lifecycle.
+  version: '1.0'
+  contact:
+    name: Apifuse
+    url: https://apifuse.io/
+  termsOfService: https://apifuse.io/terms
+  x-generated-from: documentation
+servers:
+- url: https://api.apifuse.io
+  description: Apifuse Production API
+security:
+- apiKeyAuth: []
+tags:
+- name: Connectors
+  description: Available connectors and their configurations.
+paths:
+  /connectors:
+    get:
+      operationId: listConnectors
+      summary: Apifuse List Connectors
+      description: Returns a list of all pre-built connectors available on the platform.
+      tags:
+      - Connectors
+      parameters:
+      - name: category
+        in: query
+        description: Filter connectors by category.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of connectors.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConnectorList'
+              examples:
+                ListConnectors200Example:
+                  summary: Default listConnectors 200 response
+                  x-microcks-default: true
+                  value:
+                    data:
+                    - id: conn-salesforce
+                      name: Salesforce
+                      category: CRM
+                      authType: oauth2
+                    total: 1
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  responses:
+    Unauthorized:
+      description: Authentication failed. API key is missing or invalid.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    Error:
+      type: object
+      description: Standard error response.
+      properties:
+        error:
+          type: string
+          description: Error code.
+        message:
+          type: string
+          description: Human-readable error message.
+    Connector:
+      type: object
+      description: A pre-built connector for a specific platform.
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the connector.
+          example: conn-salesforce
+        name:
+          type: string
+          description: Display name of the connector.
+          example: Salesforce
+        category:
+          type: string
+          description: Category of the connector.
+          example: CRM
+        authType:
+          type: string
+          enum:
+          - oauth2
+          - apikey
+          - basic
+          description: Authentication type used by this connector.
+          example: oauth2
+    ConnectorList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Connector'
+        total:
+          type: integer
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: API key for authenticating requests to the Apifuse API.

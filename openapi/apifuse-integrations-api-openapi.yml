@@ -1,0 +1,175 @@
+openapi: 3.0.3
+info:
+  title: Apifuse Analytics Integrations API
+  description: The Apifuse API enables developers to programmatically manage embedded integrations, connectors, workflows, and user authentication within their SaaS applications. Build native integration marketplaces and manage the complete embedded integration lifecycle.
+  version: '1.0'
+  contact:
+    name: Apifuse
+    url: https://apifuse.io/
+  termsOfService: https://apifuse.io/terms
+  x-generated-from: documentation
+servers:
+- url: https://api.apifuse.io
+  description: Apifuse Production API
+security:
+- apiKeyAuth: []
+tags:
+- name: Integrations
+  description: Manage and configure embedded integrations.
+paths:
+  /integrations:
+    get:
+      operationId: listIntegrations
+      summary: Apifuse List Integrations
+      description: Returns a list of all available integrations in the marketplace.
+      tags:
+      - Integrations
+      parameters:
+      - name: category
+        in: query
+        description: Filter integrations by category (e.g., CRM, Accounting).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number for pagination.
+        schema:
+          type: integer
+          default: 1
+      - name: limit
+        in: query
+        description: Number of results per page.
+        schema:
+          type: integer
+          default: 20
+      responses:
+        '200':
+          description: List of integrations.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IntegrationList'
+              examples:
+                ListIntegrations200Example:
+                  summary: Default listIntegrations 200 response
+                  x-microcks-default: true
+                  value:
+                    data:
+                    - id: int-001
+                      name: Salesforce
+                      category: CRM
+                      status: active
+                    total: 1
+                    page: 1
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /integrations/{integrationId}:
+    get:
+      operationId: getIntegration
+      summary: Apifuse Get Integration
+      description: Returns details for a specific integration.
+      tags:
+      - Integrations
+      parameters:
+      - name: integrationId
+        in: path
+        required: true
+        description: Unique identifier of the integration.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Integration details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Integration'
+              examples:
+                GetIntegration200Example:
+                  summary: Default getIntegration 200 response
+                  x-microcks-default: true
+                  value:
+                    id: int-001
+                    name: Salesforce
+                    category: CRM
+                    status: active
+                    description: CRM integration for managing leads and contacts.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    IntegrationList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Integration'
+        total:
+          type: integer
+        page:
+          type: integer
+    Integration:
+      type: object
+      description: An embedded integration available in the marketplace.
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the integration.
+          example: int-001
+        name:
+          type: string
+          description: Display name of the integration.
+          example: Salesforce
+        category:
+          type: string
+          description: Category of the integration.
+          example: CRM
+        status:
+          type: string
+          enum:
+          - active
+          - inactive
+          - beta
+          description: Current status of the integration.
+          example: active
+        description:
+          type: string
+          description: Description of what the integration does.
+    Error:
+      type: object
+      description: Standard error response.
+      properties:
+        error:
+          type: string
+          description: Error code.
+        message:
+          type: string
+          description: Human-readable error message.
+  responses:
+    NotFound:
+      description: The requested resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Authentication failed. API key is missing or invalid.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: API key for authenticating requests to the Apifuse API.

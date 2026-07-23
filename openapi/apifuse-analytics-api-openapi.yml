@@ -1,0 +1,112 @@
+openapi: 3.0.3
+info:
+  title: Apifuse Analytics API
+  description: The Apifuse API enables developers to programmatically manage embedded integrations, connectors, workflows, and user authentication within their SaaS applications. Build native integration marketplaces and manage the complete embedded integration lifecycle.
+  version: '1.0'
+  contact:
+    name: Apifuse
+    url: https://apifuse.io/
+  termsOfService: https://apifuse.io/terms
+  x-generated-from: documentation
+servers:
+- url: https://api.apifuse.io
+  description: Apifuse Production API
+security:
+- apiKeyAuth: []
+tags:
+- name: Analytics
+  description: Integration usage analytics and monitoring.
+paths:
+  /analytics:
+    get:
+      operationId: getAnalytics
+      summary: Apifuse Get Analytics
+      description: Returns usage analytics and task counts for integrations.
+      tags:
+      - Analytics
+      parameters:
+      - name: startDate
+        in: query
+        description: Start date for analytics period (ISO 8601 date).
+        schema:
+          type: string
+          format: date
+      - name: endDate
+        in: query
+        description: End date for analytics period (ISO 8601 date).
+        schema:
+          type: string
+          format: date
+      responses:
+        '200':
+          description: Analytics data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Analytics'
+              examples:
+                GetAnalytics200Example:
+                  summary: Default getAnalytics 200 response
+                  x-microcks-default: true
+                  value:
+                    totalTasks: 15420
+                    activeIntegrations: 12
+                    activeUsers: 87
+                    period:
+                      startDate: '2026-03-01'
+                      endDate: '2026-04-01'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  responses:
+    Unauthorized:
+      description: Authentication failed. API key is missing or invalid.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    Analytics:
+      type: object
+      description: Usage analytics for integrations.
+      properties:
+        totalTasks:
+          type: integer
+          description: Total number of tasks executed.
+          example: 15420
+        activeIntegrations:
+          type: integer
+          description: Number of active integrations.
+          example: 12
+        activeUsers:
+          type: integer
+          description: Number of active users.
+          example: 87
+        period:
+          type: object
+          properties:
+            startDate:
+              type: string
+              format: date
+            endDate:
+              type: string
+              format: date
+    Error:
+      type: object
+      description: Standard error response.
+      properties:
+        error:
+          type: string
+          description: Error code.
+        message:
+          type: string
+          description: Human-readable error message.
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: API key for authenticating requests to the Apifuse API.

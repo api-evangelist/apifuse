@@ -1,0 +1,99 @@
+openapi: 3.0.3
+info:
+  title: Apifuse Analytics Users API
+  description: The Apifuse API enables developers to programmatically manage embedded integrations, connectors, workflows, and user authentication within their SaaS applications. Build native integration marketplaces and manage the complete embedded integration lifecycle.
+  version: '1.0'
+  contact:
+    name: Apifuse
+    url: https://apifuse.io/
+  termsOfService: https://apifuse.io/terms
+  x-generated-from: documentation
+servers:
+- url: https://api.apifuse.io
+  description: Apifuse Production API
+security:
+- apiKeyAuth: []
+tags:
+- name: Users
+  description: User authentication and management.
+paths:
+  /users:
+    get:
+      operationId: listUsers
+      summary: Apifuse List Users
+      description: Returns all users who have connected integrations.
+      tags:
+      - Users
+      responses:
+        '200':
+          description: List of users.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserList'
+              examples:
+                ListUsers200Example:
+                  summary: Default listUsers 200 response
+                  x-microcks-default: true
+                  value:
+                    data:
+                    - id: user-001
+                      email: jsmith@example.com
+                      connectedIntegrations: 3
+                    total: 1
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    UserList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+        total:
+          type: integer
+    User:
+      type: object
+      description: A user who has connected integrations.
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the user.
+          example: user-001
+        email:
+          type: string
+          format: email
+          description: Email address of the user.
+          example: jsmith@example.com
+        connectedIntegrations:
+          type: integer
+          description: Number of integrations connected by this user.
+          example: 3
+    Error:
+      type: object
+      description: Standard error response.
+      properties:
+        error:
+          type: string
+          description: Error code.
+        message:
+          type: string
+          description: Human-readable error message.
+  responses:
+    Unauthorized:
+      description: Authentication failed. API key is missing or invalid.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: API key for authenticating requests to the Apifuse API.

@@ -1,0 +1,179 @@
+openapi: 3.0.3
+info:
+  title: Apifuse Analytics Workflows API
+  description: The Apifuse API enables developers to programmatically manage embedded integrations, connectors, workflows, and user authentication within their SaaS applications. Build native integration marketplaces and manage the complete embedded integration lifecycle.
+  version: '1.0'
+  contact:
+    name: Apifuse
+    url: https://apifuse.io/
+  termsOfService: https://apifuse.io/terms
+  x-generated-from: documentation
+servers:
+- url: https://api.apifuse.io
+  description: Apifuse Production API
+security:
+- apiKeyAuth: []
+tags:
+- name: Workflows
+  description: Create and manage integration workflows.
+paths:
+  /workflows:
+    get:
+      operationId: listWorkflows
+      summary: Apifuse List Workflows
+      description: Returns all integration workflows configured in the account.
+      tags:
+      - Workflows
+      responses:
+        '200':
+          description: List of workflows.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkflowList'
+              examples:
+                ListWorkflows200Example:
+                  summary: Default listWorkflows 200 response
+                  x-microcks-default: true
+                  value:
+                    data:
+                    - id: wf-001
+                      name: Lead Sync
+                      status: active
+                      triggerType: webhook
+                    total: 1
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      operationId: createWorkflow
+      summary: Apifuse Create Workflow
+      description: Creates a new integration workflow.
+      tags:
+      - Workflows
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WorkflowCreate'
+            examples:
+              CreateWorkflowRequestExample:
+                summary: Default createWorkflow request
+                x-microcks-default: true
+                value:
+                  name: Lead Sync
+                  triggerType: webhook
+                  steps:
+                  - type: action
+                    connector: salesforce
+                    action: createLead
+      responses:
+        '201':
+          description: Workflow created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Workflow'
+              examples:
+                CreateWorkflow201Example:
+                  summary: Default createWorkflow 201 response
+                  x-microcks-default: true
+                  value:
+                    id: wf-002
+                    name: Lead Sync
+                    status: active
+                    triggerType: webhook
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    Workflow:
+      type: object
+      description: An integration workflow.
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the workflow.
+          example: wf-001
+        name:
+          type: string
+          description: Name of the workflow.
+          example: Lead Sync
+        status:
+          type: string
+          enum:
+          - active
+          - inactive
+          - draft
+          description: Current status of the workflow.
+          example: active
+        triggerType:
+          type: string
+          enum:
+          - polling
+          - realtime
+          - scheduled
+          - webhook
+          description: Type of trigger that activates the workflow.
+          example: webhook
+    WorkflowList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Workflow'
+        total:
+          type: integer
+    WorkflowCreate:
+      type: object
+      description: Request body for creating a workflow.
+      required:
+      - name
+      - triggerType
+      properties:
+        name:
+          type: string
+          description: Name of the workflow.
+        triggerType:
+          type: string
+          enum:
+          - polling
+          - realtime
+          - scheduled
+          - webhook
+          description: Type of trigger for the workflow.
+        steps:
+          type: array
+          description: Steps in the workflow.
+          items:
+            type: object
+    Error:
+      type: object
+      description: Standard error response.
+      properties:
+        error:
+          type: string
+          description: Error code.
+        message:
+          type: string
+          description: Human-readable error message.
+  responses:
+    Unauthorized:
+      description: Authentication failed. API key is missing or invalid.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: API key for authenticating requests to the Apifuse API.
