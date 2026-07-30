@@ -5,7 +5,20 @@ description: Apifuse is a native integration platform that enables SaaS companie
   embeddable UI, workflow automation, and analytics tools that help developers add native integrations without building from
   scratch.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apifuse.png
 tags:
 - Embedded Integrations
 - Integration Platform
@@ -19,26 +32,164 @@ created: '2026-03-16'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: apifuse:apifuse-api
-  name: Apifuse API
-  description: The Apifuse API enables developers to programmatically manage embedded integrations, connectors, workflows,
-    and user authentication within their SaaS applications. Build and monitor native integration marketplaces with full programmatic
-    control over the integration lifecycle.
+- aid: apifuse:apifuse-analytics-api
+  name: Apifuse Analytics API
+  description: Integration usage analytics and monitoring.
   humanURL: https://apifuse.io/
   baseURL: https://api.apifuse.io
   tags:
   - Analytics
-  - Connectors
-  - Embedded Integrations
-  - Integrations
-  - Workflows
   properties:
+  - type: OpenAPI
+    url: openapi/apifuse-analytics-api-openapi.yml
   - type: Documentation
     url: https://docs.apifuse.io/
   - type: GettingStarted
     url: https://docs.apifuse.io/getting-started
+  - type: Pricing
+    url: https://apifuse.io/pricing
+  - type: JSONSchema
+    url: json-schema/apifuse-integration-schema.json
+  - type: JSONSchema
+    url: json-schema/apifuse-workflow-schema.json
+  - type: JSONSchema
+    url: json-schema/apifuse-connector-schema.json
+  - type: JSONSchema
+    url: json-schema/apifuse-analytics-schema.json
+  - type: JSONLD
+    url: json-ld/apifuse-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/apifuse-analytics.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apifuse-connectors.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apifuse-integrations.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apifuse-users.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apifuse-workflows.yaml
+- aid: apifuse:apifuse-connectors-api
+  name: Apifuse Connectors API
+  description: Available connectors and their configurations.
+  humanURL: https://apifuse.io/
+  baseURL: https://api.apifuse.io
+  tags:
+  - Connectors
+  properties:
   - type: OpenAPI
-    url: openapi/apifuse-api.yaml
+    url: openapi/apifuse-connectors-api-openapi.yml
+  - type: Documentation
+    url: https://docs.apifuse.io/
+  - type: GettingStarted
+    url: https://docs.apifuse.io/getting-started
+  - type: Pricing
+    url: https://apifuse.io/pricing
+  - type: JSONSchema
+    url: json-schema/apifuse-integration-schema.json
+  - type: JSONSchema
+    url: json-schema/apifuse-workflow-schema.json
+  - type: JSONSchema
+    url: json-schema/apifuse-connector-schema.json
+  - type: JSONSchema
+    url: json-schema/apifuse-analytics-schema.json
+  - type: JSONLD
+    url: json-ld/apifuse-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/apifuse-analytics.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apifuse-connectors.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apifuse-integrations.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apifuse-users.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apifuse-workflows.yaml
+- aid: apifuse:apifuse-integrations-api
+  name: Apifuse Integrations API
+  description: Manage and configure embedded integrations.
+  humanURL: https://apifuse.io/
+  baseURL: https://api.apifuse.io
+  tags:
+  - Integrations
+  properties:
+  - type: OpenAPI
+    url: openapi/apifuse-integrations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.apifuse.io/
+  - type: GettingStarted
+    url: https://docs.apifuse.io/getting-started
+  - type: Pricing
+    url: https://apifuse.io/pricing
+  - type: JSONSchema
+    url: json-schema/apifuse-integration-schema.json
+  - type: JSONSchema
+    url: json-schema/apifuse-workflow-schema.json
+  - type: JSONSchema
+    url: json-schema/apifuse-connector-schema.json
+  - type: JSONSchema
+    url: json-schema/apifuse-analytics-schema.json
+  - type: JSONLD
+    url: json-ld/apifuse-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/apifuse-analytics.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apifuse-connectors.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apifuse-integrations.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apifuse-users.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apifuse-workflows.yaml
+- aid: apifuse:apifuse-users-api
+  name: Apifuse Users API
+  description: User authentication and management.
+  humanURL: https://apifuse.io/
+  baseURL: https://api.apifuse.io
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/apifuse-users-api-openapi.yml
+  - type: Documentation
+    url: https://docs.apifuse.io/
+  - type: GettingStarted
+    url: https://docs.apifuse.io/getting-started
+  - type: Pricing
+    url: https://apifuse.io/pricing
+  - type: JSONSchema
+    url: json-schema/apifuse-integration-schema.json
+  - type: JSONSchema
+    url: json-schema/apifuse-workflow-schema.json
+  - type: JSONSchema
+    url: json-schema/apifuse-connector-schema.json
+  - type: JSONSchema
+    url: json-schema/apifuse-analytics-schema.json
+  - type: JSONLD
+    url: json-ld/apifuse-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/apifuse-analytics.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apifuse-connectors.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apifuse-integrations.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apifuse-users.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/apifuse-workflows.yaml
+- aid: apifuse:apifuse-workflows-api
+  name: Apifuse Workflows API
+  description: Create and manage integration workflows.
+  humanURL: https://apifuse.io/
+  baseURL: https://api.apifuse.io
+  tags:
+  - Workflows
+  properties:
+  - type: OpenAPI
+    url: openapi/apifuse-workflows-api-openapi.yml
+  - type: Documentation
+    url: https://docs.apifuse.io/
+  - type: GettingStarted
+    url: https://docs.apifuse.io/getting-started
   - type: Pricing
     url: https://apifuse.io/pricing
   - type: JSONSchema
@@ -62,6 +213,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/apifuse-workflows.yaml
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/apifuse/overview
 - type: AgenticAccess
   url: agentic-access/apifuse-agentic-access.yml
 - type: DomainSecurity
