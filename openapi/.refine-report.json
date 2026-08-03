@@ -1,0 +1,22 @@
+{
+  "provider": "apifuse",
+  "sources": [
+    "apifuse-analytics-api-openapi.yml",
+    "apifuse-connectors-api-openapi.yml",
+    "apifuse-integrations-api-openapi.yml",
+    "apifuse-users-api-openapi.yml",
+    "apifuse-workflows-api-openapi.yml"
+  ],
+  "outputs": [
+    "apifuse-analytics-api-openapi.yml",
+    "apifuse-connectors-api-openapi.yml",
+    "apifuse-integrations-api-openapi.yml",
+    "apifuse-users-api-openapi.yml",
+    "apifuse-workflows-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
