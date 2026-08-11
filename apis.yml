@@ -58,16 +58,6 @@ apis:
     url: json-schema/apifuse-analytics-schema.json
   - type: JSONLD
     url: json-ld/apifuse-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-analytics.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-connectors.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-integrations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-users.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-workflows.yaml
 - aid: apifuse:apifuse-connectors-api
   name: Apifuse Connectors API
   description: Available connectors and their configurations.
@@ -94,16 +84,6 @@ apis:
     url: json-schema/apifuse-analytics-schema.json
   - type: JSONLD
     url: json-ld/apifuse-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-analytics.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-connectors.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-integrations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-users.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-workflows.yaml
 - aid: apifuse:apifuse-integrations-api
   name: Apifuse Integrations API
   description: Manage and configure embedded integrations.
@@ -130,16 +110,6 @@ apis:
     url: json-schema/apifuse-analytics-schema.json
   - type: JSONLD
     url: json-ld/apifuse-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-analytics.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-connectors.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-integrations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-users.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-workflows.yaml
 - aid: apifuse:apifuse-users-api
   name: Apifuse Users API
   description: User authentication and management.
@@ -166,16 +136,6 @@ apis:
     url: json-schema/apifuse-analytics-schema.json
   - type: JSONLD
     url: json-ld/apifuse-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-analytics.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-connectors.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-integrations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-users.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-workflows.yaml
 - aid: apifuse:apifuse-workflows-api
   name: Apifuse Workflows API
   description: Create and manage integration workflows.
@@ -202,16 +162,6 @@ apis:
     url: json-schema/apifuse-analytics-schema.json
   - type: JSONLD
     url: json-ld/apifuse-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-analytics.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-connectors.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-integrations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-users.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/apifuse-workflows.yaml
 common:
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/apifuse/overview
