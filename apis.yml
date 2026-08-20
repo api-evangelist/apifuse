@@ -22,6 +22,14 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apifuse.pn
 tags:
 - Embedded Integrations
 - Integration Platform
+- Integration
+- iPaaS
+- Marketplace
+- Software-as-a-Service
+- Workflow-Automation
+tags_raw:
+- Embedded Integrations
+- Integration Platform
 - Integrations
 - iPaaS
 - Marketplace
@@ -90,6 +98,8 @@ apis:
   humanURL: https://apifuse.io/
   baseURL: https://api.apifuse.io
   tags:
+  - Integration
+  tags_raw:
   - Integrations
   properties:
   - type: OpenAPI
@@ -116,6 +126,8 @@ apis:
   humanURL: https://apifuse.io/
   baseURL: https://api.apifuse.io
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
