@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Apifuse Analytics Integrations API
+  title: Apifuse Integrations API
   description: The Apifuse API enables developers to programmatically manage embedded integrations, connectors, workflows, and user authentication within their SaaS applications. Build native integration marketplaces and manage the complete embedded integration lifecycle.
   version: '1.0'
   contact:
@@ -116,17 +116,6 @@ components:
         message:
           type: string
           description: Human-readable error message.
-    IntegrationList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Integration'
-        total:
-          type: integer
-        page:
-          type: integer
     Integration:
       type: object
       description: An embedded integration available in the marketplace.
@@ -154,15 +143,26 @@ components:
         description:
           type: string
           description: Description of what the integration does.
+    IntegrationList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Integration'
+        total:
+          type: integer
+        page:
+          type: integer
   responses:
-    NotFound:
-      description: The requested resource was not found.
+    Unauthorized:
+      description: Authentication failed. API key is missing or invalid.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Authentication failed. API key is missing or invalid.
+    NotFound:
+      description: The requested resource was not found.
       content:
         application/json:
           schema:

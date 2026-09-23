@@ -1,11 +1,7 @@
 {
   "provider": "apifuse",
   "sources": [
-    "apifuse-analytics-api-openapi.yml",
-    "apifuse-connectors-api-openapi.yml",
-    "apifuse-integrations-api-openapi.yml",
-    "apifuse-users-api-openapi.yml",
-    "apifuse-workflows-api-openapi.yml"
+    "_ae-authored/apifuse-api.yaml"
   ],
   "outputs": [
     "apifuse-analytics-api-openapi.yml",
@@ -18,12 +14,15 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "apifuse-analytics-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apifuse-connectors-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apifuse-integrations-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apifuse-users-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apifuse-workflows-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "apifuse-api.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "apifuse-analytics-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apifuse-connectors-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apifuse-integrations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apifuse-users-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apifuse-workflows-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

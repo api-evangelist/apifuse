@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Apifuse Analytics Workflows API
+  title: Apifuse Workflows API
   description: The Apifuse API enables developers to programmatically manage embedded integrations, connectors, workflows, and user authentication within their SaaS applications. Build native integration marketplaces and manage the complete embedded integration lifecycle.
   version: '1.0'
   contact:
@@ -126,15 +126,6 @@ components:
           description: Steps in the workflow.
           items:
             type: object
-    WorkflowList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Workflow'
-        total:
-          type: integer
     Workflow:
       type: object
       description: An integration workflow.
@@ -164,6 +155,15 @@ components:
           - webhook
           description: Type of trigger that activates the workflow.
           example: webhook
+    WorkflowList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Workflow'
+        total:
+          type: integer
   responses:
     Unauthorized:
       description: Authentication failed. API key is missing or invalid.

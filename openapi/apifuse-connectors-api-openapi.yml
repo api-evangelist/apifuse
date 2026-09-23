@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Apifuse Analytics Connectors API
+  title: Apifuse Connectors API
   description: The Apifuse API enables developers to programmatically manage embedded integrations, connectors, workflows, and user authentication within their SaaS applications. Build native integration marketplaces and manage the complete embedded integration lifecycle.
   version: '1.0'
   contact:

@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Apifuse Analytics Users API
+  title: Apifuse Users API
   description: The Apifuse API enables developers to programmatically manage embedded integrations, connectors, workflows, and user authentication within their SaaS applications. Build native integration marketplaces and manage the complete embedded integration lifecycle.
   version: '1.0'
   contact:
