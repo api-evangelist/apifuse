@@ -48,6 +48,15 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    UserList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+        total:
+          type: integer
     Error:
       type: object
       description: Standard error response.
@@ -58,15 +67,6 @@ components:
         message:
           type: string
           description: Human-readable error message.
-    UserList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/User'
-        total:
-          type: integer
     User:
       type: object
       description: A user who has connected integrations.

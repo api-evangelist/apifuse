@@ -39,7 +39,7 @@ tags:
 - iPaaS
 - Marketplace
 - Software-as-a-Service
-- Workflow-Automation
+- Workflow Automation
 tags_raw:
 - Embedded Integrations
 - Integration Platform
@@ -48,6 +48,7 @@ tags_raw:
 - Marketplace
 - SaaS
 - Workflow Automation
+- Workflow-Automation
 url: https://raw.githubusercontent.com/api-evangelist/apifuse/refs/heads/main/apis.yml
 created: '2026-03-16'
 modified: '2026-05-19'

@@ -93,6 +93,44 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    WorkflowList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Workflow'
+        total:
+          type: integer
+    Workflow:
+      type: object
+      description: An integration workflow.
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the workflow.
+          example: wf-001
+        name:
+          type: string
+          description: Name of the workflow.
+          example: Lead Sync
+        status:
+          type: string
+          enum:
+          - active
+          - inactive
+          - draft
+          description: Current status of the workflow.
+          example: active
+        triggerType:
+          type: string
+          enum:
+          - polling
+          - realtime
+          - scheduled
+          - webhook
+          description: Type of trigger that activates the workflow.
+          example: webhook
     Error:
       type: object
       description: Standard error response.
@@ -126,44 +164,6 @@ components:
           description: Steps in the workflow.
           items:
             type: object
-    Workflow:
-      type: object
-      description: An integration workflow.
-      properties:
-        id:
-          type: string
-          description: Unique identifier of the workflow.
-          example: wf-001
-        name:
-          type: string
-          description: Name of the workflow.
-          example: Lead Sync
-        status:
-          type: string
-          enum:
-          - active
-          - inactive
-          - draft
-          description: Current status of the workflow.
-          example: active
-        triggerType:
-          type: string
-          enum:
-          - polling
-          - realtime
-          - scheduled
-          - webhook
-          description: Type of trigger that activates the workflow.
-          example: webhook
-    WorkflowList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Workflow'
-        total:
-          type: integer
   responses:
     Unauthorized:
       description: Authentication failed. API key is missing or invalid.

@@ -55,16 +55,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    Error:
-      type: object
-      description: Standard error response.
-      properties:
-        error:
-          type: string
-          description: Error code.
-        message:
-          type: string
-          description: Human-readable error message.
     Connector:
       type: object
       description: A pre-built connector for a specific platform.
@@ -89,6 +79,16 @@ components:
           - basic
           description: Authentication type used by this connector.
           example: oauth2
+    Error:
+      type: object
+      description: Standard error response.
+      properties:
+        error:
+          type: string
+          description: Error code.
+        message:
+          type: string
+          description: Human-readable error message.
     ConnectorList:
       type: object
       properties:
