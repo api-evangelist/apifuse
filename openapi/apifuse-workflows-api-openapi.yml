@@ -93,15 +93,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    WorkflowList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Workflow'
-        total:
-          type: integer
     Workflow:
       type: object
       description: An integration workflow.
@@ -141,6 +132,15 @@ components:
         message:
           type: string
           description: Human-readable error message.
+    WorkflowList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Workflow'
+        total:
+          type: integer
     WorkflowCreate:
       type: object
       description: Request body for creating a workflow.

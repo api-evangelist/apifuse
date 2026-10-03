@@ -48,25 +48,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    UserList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/User'
-        total:
-          type: integer
-    Error:
-      type: object
-      description: Standard error response.
-      properties:
-        error:
-          type: string
-          description: Error code.
-        message:
-          type: string
-          description: Human-readable error message.
     User:
       type: object
       description: A user who has connected integrations.
@@ -84,6 +65,25 @@ components:
           type: integer
           description: Number of integrations connected by this user.
           example: 3
+    Error:
+      type: object
+      description: Standard error response.
+      properties:
+        error:
+          type: string
+          description: Error code.
+        message:
+          type: string
+          description: Human-readable error message.
+    UserList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+        total:
+          type: integer
   responses:
     Unauthorized:
       description: Authentication failed. API key is missing or invalid.
