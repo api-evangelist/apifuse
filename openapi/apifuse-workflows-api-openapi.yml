@@ -122,25 +122,6 @@ components:
           - webhook
           description: Type of trigger that activates the workflow.
           example: webhook
-    Error:
-      type: object
-      description: Standard error response.
-      properties:
-        error:
-          type: string
-          description: Error code.
-        message:
-          type: string
-          description: Human-readable error message.
-    WorkflowList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Workflow'
-        total:
-          type: integer
     WorkflowCreate:
       type: object
       description: Request body for creating a workflow.
@@ -164,6 +145,25 @@ components:
           description: Steps in the workflow.
           items:
             type: object
+    Error:
+      type: object
+      description: Standard error response.
+      properties:
+        error:
+          type: string
+          description: Error code.
+        message:
+          type: string
+          description: Human-readable error message.
+    WorkflowList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Workflow'
+        total:
+          type: integer
   responses:
     Unauthorized:
       description: Authentication failed. API key is missing or invalid.

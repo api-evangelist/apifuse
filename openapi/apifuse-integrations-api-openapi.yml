@@ -105,17 +105,20 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
+  responses:
+    Unauthorized:
+      description: Authentication failed. API key is missing or invalid.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: The requested resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
-    Error:
-      type: object
-      description: Standard error response.
-      properties:
-        error:
-          type: string
-          description: Error code.
-        message:
-          type: string
-          description: Human-readable error message.
     Integration:
       type: object
       description: An embedded integration available in the marketplace.
@@ -154,19 +157,16 @@ components:
           type: integer
         page:
           type: integer
-  responses:
-    NotFound:
-      description: The requested resource was not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Authentication failed. API key is missing or invalid.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
+    Error:
+      type: object
+      description: Standard error response.
+      properties:
+        error:
+          type: string
+          description: Error code.
+        message:
+          type: string
+          description: Human-readable error message.
   securitySchemes:
     apiKeyAuth:
       type: apiKey

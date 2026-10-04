@@ -54,33 +54,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  responses:
-    Unauthorized:
-      description: Authentication failed. API key is missing or invalid.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   schemas:
-    ConnectorList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Connector'
-        total:
-          type: integer
-    Error:
-      type: object
-      description: Standard error response.
-      properties:
-        error:
-          type: string
-          description: Error code.
-        message:
-          type: string
-          description: Human-readable error message.
     Connector:
       type: object
       description: A pre-built connector for a specific platform.
@@ -105,6 +79,32 @@ components:
           - basic
           description: Authentication type used by this connector.
           example: oauth2
+    Error:
+      type: object
+      description: Standard error response.
+      properties:
+        error:
+          type: string
+          description: Error code.
+        message:
+          type: string
+          description: Human-readable error message.
+    ConnectorList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Connector'
+        total:
+          type: integer
+  responses:
+    Unauthorized:
+      description: Authentication failed. API key is missing or invalid.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     apiKeyAuth:
       type: apiKey
