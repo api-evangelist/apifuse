@@ -58,15 +58,6 @@ components:
         message:
           type: string
           description: Human-readable error message.
-    UserList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/User'
-        total:
-          type: integer
     User:
       type: object
       description: A user who has connected integrations.
@@ -84,6 +75,15 @@ components:
           type: integer
           description: Number of integrations connected by this user.
           example: 3
+    UserList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+        total:
+          type: integer
   responses:
     Unauthorized:
       description: Authentication failed. API key is missing or invalid.
