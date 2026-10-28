@@ -1,4 +1,4 @@
-# Apifuse (apifuse)
+# Apifuse
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,143 +66,176 @@
 
 Apifuse is a native integration platform that enables SaaS companies to build and embed integrations directly into their products. It provides a white-label integration solution with pre-built connectors across 20+ categories, an embeddable UI, workflow automation, and analytics tools that help developers add native integrations without building from scratch.
 
-**URL:** [https://apifuse.io/](https://apifuse.io/)
+**Areas:** Embedded Integrations · Integration Platform · Integration · iPaaS · Marketplace · Software-as-a-Service · Workflow Automation
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Apifuse on APIs.io
 
-## Tags:
+Everything profiled for Apifuse is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apifuse/](https://apis.io/providers/apifuse/)** — or go straight to one of the APIs or properties below.
 
- - Embedded Integrations, Integration Platform, Integrations, iPaaS, Marketplace, SaaS, Workflow Automation
+### APIs (5)
 
-## Timestamps
+- [Apifuse Analytics API](https://apis.io/apis/apifuse/apifuse-analytics-api/) — Integration usage analytics and monitoring.
+- [Apifuse Connectors API](https://apis.io/apis/apifuse/apifuse-connectors-api/) — Available connectors and their configurations.
+- [Apifuse Integrations API](https://apis.io/apis/apifuse/apifuse-integrations-api/) — Manage and configure embedded integrations.
+- [Apifuse Users API](https://apis.io/apis/apifuse/apifuse-users-api/) — User authentication and management.
+- [Apifuse Workflows API](https://apis.io/apis/apifuse/apifuse-workflows-api/) — Create and manage integration workflows.
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Apifuse API
-The Apifuse API enables developers to programmatically manage embedded integrations, connectors, workflows, and user authentication within their SaaS applications.
+#### Agentic access (1)
 
-**Human URL:** [https://apifuse.io/](https://apifuse.io/)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags:
+- [Apifuse Agentic Access](https://apis.io/agentic-access/apifuse/apifuse-agentic-access/)
 
- - Analytics, Connectors, Embedded Integrations, Integrations, Workflows
+#### JSON Schema (4)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://docs.apifuse.io/)
-- [GettingStarted](https://docs.apifuse.io/getting-started)
-- [OpenAPI](openapi/apifuse-api.yaml)
-- [Pricing](https://apifuse.io/pricing)
-- [JSONSchema](json-schema/apifuse-integration-schema.json)
-- [JSONSchema](json-schema/apifuse-workflow-schema.json)
-- [JSONSchema](json-schema/apifuse-connector-schema.json)
-- [JSONSchema](json-schema/apifuse-analytics-schema.json)
-- [JSON-LD](json-ld/apifuse-context.jsonld)
+- [Analytics](https://apis.io/schemas/apifuse/apifuse-analytics/)
+- [Connector](https://apis.io/schemas/apifuse/apifuse-connector/)
+- [Integration](https://apis.io/schemas/apifuse/apifuse-integration/)
+- [Workflow](https://apis.io/schemas/apifuse/apifuse-workflow/)
 
-## Common Properties
+#### JSON Structure (4)
+
+Data models expressed in JSON Structure.
+
+- [Apifuse Analytics Structure](https://apis.io/json-structure/apifuse/apifuse-analytics-structure/)
+- [Apifuse Connector Structure](https://apis.io/json-structure/apifuse/apifuse-connector-structure/)
+- [Apifuse Integration Structure](https://apis.io/json-structure/apifuse/apifuse-integration-structure/)
+- [Apifuse Workflow Structure](https://apis.io/json-structure/apifuse/apifuse-workflow-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Apifuse Context](https://apis.io/jsonld/apifuse/apifuse-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Apifuse Vocabulary](https://apis.io/vocabularies/apifuse/apifuse-vocabulary/)
+
+#### Examples (4)
+
+Example requests and responses.
+
+- [Apifuse Analytics Example](https://apis.io/examples/apifuse/apifuse-analytics-example/)
+- [Apifuse Connector Example](https://apis.io/examples/apifuse/apifuse-connector-example/)
+- [Apifuse Integration Example](https://apis.io/examples/apifuse/apifuse-integration-example/)
+- [Apifuse Workflow Example](https://apis.io/examples/apifuse/apifuse-workflow-example/)
+
+#### Collections (10)
+
+Postman and Open Collection request collections.
+
+- [Apifuse Analytics API](https://apis.io/collections/apifuse/open-apifuse-analytics-api/)
+- [Apifuse Analytics Connectors API](https://apis.io/collections/apifuse/open-apifuse-connectors-api/)
+- [Apifuse Analytics Integrations API](https://apis.io/collections/apifuse/open-apifuse-integrations-api/)
+- [Apifuse Analytics Users API](https://apis.io/collections/apifuse/open-apifuse-users-api/)
+- [Apifuse Analytics Workflows API](https://apis.io/collections/apifuse/open-apifuse-workflows-api/)
+- [Apifuse Analytics API](https://apis.io/collections/apifuse/postman-apifuse-analytics-api/)
+- [Apifuse Analytics Connectors API](https://apis.io/collections/apifuse/postman-apifuse-connectors-api/)
+- [Apifuse Analytics Integrations API](https://apis.io/collections/apifuse/postman-apifuse-integrations-api/)
+- [Apifuse Analytics Users API](https://apis.io/collections/apifuse/postman-apifuse-users-api/)
+- [Apifuse Analytics Workflows API](https://apis.io/collections/apifuse/postman-apifuse-workflows-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Apifuse — jsonschema rules](https://apis.io/rules/apifuse/apifuse-jsonschema-spectral-rules/)
+- [Apifuse API Rules](https://apis.io/rules/apifuse/apifuse-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Apifuse Authentication](https://apis.io/security/apifuse/apifuse-authentication/)
+- [Apifuse Domain Security](https://apis.io/security/apifuse/apifuse-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Apifuse Plans Pricing](https://apis.io/plans/apifuse/apifuse-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Apifuse Rate Limits](https://apis.io/rate-limits/apifuse/apifuse-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Apifuse Finops](https://apis.io/finops/apifuse/apifuse-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://apifuse.io/)
 - [Documentation](https://docs.apifuse.io/)
-- [GettingStarted](https://docs.apifuse.io/getting-started)
+- [Getting started](https://docs.apifuse.io/getting-started)
 - [Pricing](https://apifuse.io/pricing)
 - [Blog](https://apifuse.io/blog)
-- [SignUp](https://app.apifuse.io/register)
-- [Login](https://app.apifuse.io/login)
-- [GitHubOrganization](https://github.com/apifuse)
+- [GitHub](https://github.com/apifuse)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Embedded Integration Marketplace | Build a branded integration marketplace within your SaaS product, allowing customers to connect their preferred business tools. |
-| Pre-Built Connectors | 150+ pre-built connectors across 20+ categories including CRM, Accounting, Email, Project Management, and more. |
-| Workflow Builder | Visual workflow builder with triggers (polling, realtime, scheduled, webhook) and steps (actions, conditionals, loops, delays, scripts). |
-| White-Label Solution | Fully white-labeled integration UI that embeds seamlessly into your product's look and feel. |
-| Custom Connector SDK | Build custom connectors for proprietary or internal systems using the Apifuse SDK. |
-| Analytics and Monitoring | Track integration usage, task counts, active users, and monitor workflow health in real time. |
-| User Authentication | Manage user OAuth connections, API keys, and integration authentication within your platform. |
+**Kin Score 26.3** — thin · rubric 0.24.0 · scored 2026-10-17
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 71.4 |
+| Contract quality | 26.5 |
+| Contract governance | 13.6 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 25.0 |
+| Access clarity | 25.0 |
 
-| Name | Description |
-|------|-------------|
-| SaaS Integration Marketplace | Embed a branded integration marketplace into your SaaS product to let customers connect Salesforce, Mailchimp, DocuSign, and 150+ other tools. |
-| Workflow Automation | Allow customers to build no-code automation workflows between their connected apps and your platform. |
-| Platform Expansion | Transform a product into a comprehensive platform by adding native integration capabilities without building each connector from scratch. |
-| Customer Data Sync | Keep customer data synchronized across CRM, marketing automation, and your platform in real time. |
+**Agent readiness 22.9** — agent-aware
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-| Name | Description |
-|------|-------------|
-| Salesforce | CRM integration for managing leads, contacts, and opportunities. |
-| Mailchimp | Email marketing integration for campaign management and audience sync. |
-| DocuSign | E-signature integration for document workflow automation. |
-| Slack | Communication integration for notifications and workflow triggers. |
-| QuickBooks | Accounting integration for financial data synchronization. |
-| HubSpot | CRM and marketing automation integration. |
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
 
-## Solutions
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apifuse/](https://apis.io/providers/apifuse/).
 
-| Name | Description |
-|------|-------------|
-| Growth Plan | Up to 500,000 tasks/month with 6 pre-built connectors for companies starting with embedded integrations. |
-| Platform Plan | Up to 5,000,000 tasks/month with unlimited pre-built connectors for established SaaS companies. |
-| Enterprise Plan | Custom task volume, fully managed integrations, and dedicated support for enterprise SaaS platforms. |
+## How this profile is made
 
-## Artifacts
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-Machine-readable API specifications organized by format.
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Apifuse: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### OpenAPI
+## Open an issue
 
-- [Apifuse API](openapi/apifuse-api.yaml)
-
-### JSON Schema
-
-- [apifuse-integration-schema.json](json-schema/apifuse-integration-schema.json)
-- [apifuse-workflow-schema.json](json-schema/apifuse-workflow-schema.json)
-- [apifuse-connector-schema.json](json-schema/apifuse-connector-schema.json)
-- [apifuse-analytics-schema.json](json-schema/apifuse-analytics-schema.json)
-
-### JSON Structure
-
-- [apifuse-integration-structure.json](json-structure/apifuse-integration-structure.json)
-- [apifuse-workflow-structure.json](json-structure/apifuse-workflow-structure.json)
-- [apifuse-connector-structure.json](json-structure/apifuse-connector-structure.json)
-- [apifuse-analytics-structure.json](json-structure/apifuse-analytics-structure.json)
-
-### JSON-LD
-
-- [apifuse-context.jsonld](json-ld/apifuse-context.jsonld)
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Shared Per-API Definitions
-
-- [Apifuse API](capabilities/shared/apifuse.yaml) — 7 operations for embedded integration management
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Embedded Integration Management](capabilities/embedded-integration-management.yaml) | Apifuse API | 5 | SaaS Product Manager, Integration Developer |
-
-## Vocabulary
-
-- [Apifuse Vocabulary](vocabulary/apifuse-vocabulary.yaml) — Unified taxonomy mapping 5 resources, 3 actions, 1 workflow, and 2 personas across operational (OpenAPI) and capability (Naftiko) dimensions
-
-## Rules
-
-- [apifuse-spectral-rules.yml](rules/apifuse-spectral-rules.yml) — 10 rules across 6 categories enforcing Apifuse API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apifuse/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
